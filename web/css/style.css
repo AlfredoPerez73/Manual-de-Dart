@@ -1,0 +1,543 @@
+/* 
+  Paleta para modo oscuro basada en #2b3036
+  y una paleta clara para el modo claro.
+*/
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Modo Oscuro */
+  .dark-theme {
+    --bg-color: #2b3036;
+    --text-color: #f0f0f0;
+    --accent-color: #1ea0f2;
+    --card-bg: #394049;
+    --header-bg: #2b3036;
+    --menu-hover: rgba(255, 255, 255, 0.2);
+    --example-bg: #282c34;
+    --example-text: #61dafb;
+    --example-container-bg: #394049;
+    --box-shadow: inset 34px 34px 68px #282d34,
+              inset -34px -34px 68px #4a535e;
+  }
+  
+  /* Modo Claro */
+  .light-theme {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --accent-color: #0f9d58;
+    --card-bg: #ffffff;
+    --header-bg: linear-gradient(135deg, #4285f4, #3367d6);
+    --menu-hover: rgba(255, 255, 255, 0.3);
+    --example-bg: #282c34;
+    --example-text: #61dafb;
+    --example-container-bg: #fafafa;
+    --box-shadow: inset 10px -10px 15px rgba(0, 0, 0, 0.1), 
+                 inset -10px 10px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Estilos globales basados en variables */
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Landing Page */
+  #landing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .landing-content {
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+    color: var(--text-color);
+  }
+  
+  .landing-image {
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+  
+  /* Contenido principal inicialmente oculto */
+  #main-content {
+    display: none;
+  }
+  
+  /* Header y navegación */
+  header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* 🔹 Contenedor del menú con fondo limpio y borde sutil */
+  nav {
+    background-color: var(--bg-color, #ffffff);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 12px 0;
+  }
+  
+  /* 🔹 Menú centrado y adaptable */
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    overflow-x: auto; /* Scroll en móviles */
+    scrollbar-width: none; /* Oculta barra de desplazamiento */
+  }
+  
+  /* 🔹 Elementos del menú */
+  .menu-item {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color, #333);
+    padding: 12px 18px;
+    transition: color 0.3s, transform 0.2s;
+    position: relative;
+  }
+  
+  /* 🔹 Animación de subrayado */
+  .menu-item::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color, #007bff), #00d4ff);
+    border-radius: 3px;
+    transition: width 0.4s ease, left 0.4s ease;
+    overflow: hidden;
+  }
+  
+  /* 🔹 Efecto hover */
+  .menu-item:hover {
+    color: var(--accent-color, #007bff);
+    transform: translateY(-2px);
+  }
+  
+  .menu-item:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  /* 🔹 Estilo del ítem activo */
+  .menu-item.active {
+    color: var(--accent-color, #007bff);
+    font-weight: 700;
+  }
+  
+  /* 🔹 Responsivo: Móviles */
+  @media (max-width: 768px) {
+    .menu {
+      justify-content: flex-start;
+      padding: 0 15px;
+    }
+  
+    .menu-item {
+      font-size: 14px;
+      padding: 10px 14px;
+    }
+  }
+  
+  /* Toggle de tema */
+  .theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    gap: 8px;
+    font-size: 0.9em;
+    color: #fff;
+  }
+  
+  .switch {
+   --button-width: 3.5em;
+   --button-height: 2em;
+   --toggle-diameter: 1.5em;
+   --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+   --toggle-shadow-offset: 10px;
+   --toggle-wider: 3em;
+   --color-grey: #cccccc;
+   --color-green: #4296f4;
+  }
+  
+  .slider {
+   display: inline-block;
+   width: var(--button-width);
+   height: var(--button-height);
+   background-color: var(--color-grey);
+   border-radius: calc(var(--button-height) / 2);
+   position: relative;
+   transition: 0.3s all ease-in-out;
+  }
+  
+  .slider::after {
+   content: "";
+   display: inline-block;
+   width: var(--toggle-diameter);
+   height: var(--toggle-diameter);
+   background-color: #fff;
+   border-radius: calc(var(--toggle-diameter) / 2);
+   position: absolute;
+   top: var(--button-toggle-offset);
+   transform: translateX(var(--button-toggle-offset));
+   box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+   transition: 0.3s all ease-in-out;
+  }
+  
+  .switch input[type="checkbox"]:checked + .slider {
+   background-color: var(--color-green);
+  }
+  
+  .switch input[type="checkbox"]:checked + .slider::after {
+   transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+   box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  }
+  
+  .switch input[type="checkbox"] {
+   display: none;
+  }
+  
+  .switch input[type="checkbox"]:active + .slider::after {
+   width: var(--toggle-wider);
+  }
+  
+  .switch input[type="checkbox"]:checked:active + .slider::after {
+   transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+  }
+  
+  /* Main y secciones */
+  main {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+  }
+  
+  .content-section {
+    /*background-color: var(--card-bg);*/
+    border-radius: 40px;
+    background: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  
+  .content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .content-section h2 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Contenedores de ejemplos */
+  .example-container {
+    margin-top: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  button {
+      /* Variables */
+      --button_radius: 1.2em;
+      --button_color: #e8e8e8;
+      --button_outline_color: #000000;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--button_radius);
+      background: transparent;
+    }
+  
+   .toggle-enter {
+      display: block;
+      text-indent: center;
+      box-sizing: border-box;
+      box-shadow: inset 0 0.0625em 0 0 #000000, 0 0.0625em 0 0 #000000,
+      0 0.125em 0 0 #000000, 0 0.25em 0 0 #000000, 0 0.3125em 0 0 #000000,
+      0 0.375em 0 0 #000000, 0 0.425em 0 0 #000000, 0 0.425em 0.5em 0 #000000;
+      border: 2px solid var(--button_outline_color);
+      border-radius: var(--button_radius);
+      padding: 0.75em 1.5em;
+      background: var(--button_color);
+      color: var(--button_outline_color);
+      transform: translateY(-0.2em);
+      transition: transform 0.2s ease;
+      margin-left: 255px;
+      margin-top: 20px;
+    }
+    
+    button:hover {
+      /* Estilos del hover */
+      box-shadow: inset 0 0.0625em 0 0 #000000, 0 0.0625em 0 0 #000000,
+      0 0.35em 0 0 #000000, 0 0.5em 0 0 #000000, 0 0.32em 0 0 #000000,
+      0 0.4em 0 0 #000000, 0 0.44em 0 0 #000000, 0 0.44em 0.6em 0 #000000;
+      transform: translateY(-0.5em);
+  }
+  
+  button:active {
+      /* Estilos del active */
+      transform: translateY(0);
+      translate: 0 0.225em;
+      box-shadow: inset 0 0.01em 0 0 #000000, 0 0.01em 0 0 #000000,
+      0 0.05em 0 0 #000000, 0 0.01em 0 0 #000000, 0 0.01em 0 0 #000000,
+      0 0.1em 0 0 #000000, 0 0.2em 0 0 #000000, 0 0.2em 0.3em 0 #000000;
+  }
+    
+    .toggle-example {
+      display: block;
+      text-indent: center;
+      box-sizing: border-box;
+      box-shadow: inset 0 0.0625em 0 0 #000000, 0 0.0625em 0 0 #000000,
+      0 0.125em 0 0 #000000, 0 0.25em 0 0 #000000, 0 0.3125em 0 0 #000000,
+      0 0.375em 0 0 #000000, 0 0.425em 0 0 #000000, 0 0.425em 0.5em 0 #000000;
+      border: 2px solid var(--button_outline_color);
+      border-radius: var(--button_radius);
+      padding: 0.75em 1.5em;
+      background: var(--button_color);
+      color: var(--button_outline_color);
+      transform: translateY(-0.2em);
+      transition: transform 0.2s ease;
+      margin-left: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    
+    button:hover .toggle-example {
+      /* Pull the button upwards when hovered */
+      box-shadow: inset 0 0.0625em 0 0 #000000, 0 0.0625em 0 0 #000000,
+      0 0.35em 0 0 #000000, 0 0.5em 0 0 #000000, 0 0.32em 0 0 #000000,
+      0 0.4em 0 0 #000000, 0 0.44em 0 0 #000000, 0 0.44em 0.6em 0 #000000;
+      transform: translateY(-0.5em);
+    }
+    
+    button:active .toggle-example {
+      /* Push the button downwards when pressed */
+      transform: translateY(0);
+      translate: 0 0.225em;
+      box-shadow: inset 0 0.01em 0 0 #000000, 0 0.01em 0 0 #000000,
+      0 0.05em 0 0 #000000, 0 0.01em 0 0 #000000, 0 0.01em 0 0 #000000,
+      0 0.1em 0 0 #000000, 0 0.2em 0 0 #000000, 0 0.2em 0.3em 0 #000000;
+    }
+  
+  .example {
+    display: none;
+    padding: 15px;
+    animation: fadeIn 0.3s ease-in-out forwards;
+  }
+  
+  .example-container.expanded .example {
+    display: block;
+  }
+  
+  /* Etiquetas para Correcto e Incorrecto */
+  .correct-label {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4caf50; /* Verde */
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .incorrect-label {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f44336; /* Rojo */
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .example pre {
+    background-color: var(--example-bg);
+    color: var(--example-text);
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Información complementaria */
+  .complement-info {
+    background-color: #1f4b3a10;
+    padding: 10px;
+    border-left: 4px solid var(--accent-color);
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+  
+  /* Sección de práctica */
+  #practica textarea {
+    width: 100%;
+    height: 150px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #practica button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  #practica button:hover {
+    background-color: #0b8e46;
+  }
+  
+  #practice-output {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--header-bg);
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 30px;
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Media queries para dispositivos móviles */
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+    }
+    
+    .menu-item {
+      margin: 5px 0;
+    }
+    
+    main {
+      padding: 15px;
+    }
+  }
+  
+  
+  .challenge-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--example-container-bg);
+    margin-bottom: 20px;
+  }
+  
+  .challenge-container h3 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+  }
+  
+  .challenge-container textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+  }
+  
+  .challenge-container button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .challenge-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--example-container-bg);
+    margin-bottom: 20px;
+  }
+  
+  .challenge-container h3 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+  }
+  
+  .challenge-container textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+  }
+  
+  .challenge-container button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .challenge-container button:hover {
+    background-color: #0b8e46;
+  }
+  
+  .challenge-container div[id^="output-challenge"] {
+    margin-top: 10px;
+    font-weight: bold;
+  }
