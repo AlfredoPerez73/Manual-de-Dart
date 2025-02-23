@@ -343,3 +343,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  function desbloquearSiguiente(nivel) {
+      const siguienteBloque = document.getElementById(`challenge-block-${nivel + 1}`);
+      if (siguienteBloque) {
+          siguienteBloque.style.display = "block"; // Hace visible el siguiente desafío
+      }
+  }
+
+  function evaluarDesafio(nivel) {
+      const input = document.getElementById(`challenge-${nivel}`).value.trim();
+      const mensaje = document.createElement("p");
+
+      // Simulación de evaluación (puedes agregar validaciones más específicas)
+      if (input.length > 0) { 
+          mensaje.textContent = "✅ ¡Correcto!";
+          mensaje.style.color = "green";
+          desbloquearSiguiente(nivel);
+      } else {
+          mensaje.textContent = "❌ Inténtalo de nuevo.";
+          mensaje.style.color = "red";
+      }
+
+      document.getElementById(`output-challenge-${nivel}`).innerHTML = "";
+      document.getElementById(`output-challenge-${nivel}`).appendChild(mensaje);
+  }
+
+  // Asignar eventos a los botones
+  for (let i = 1; i <= 10; i++) {
+      const boton = document.getElementById(`eval-challenge-${i}`);
+      if (boton) {
+          boton.addEventListener("click", () => evaluarDesafio(i));
+      }
+  }
+});
+
