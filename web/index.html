@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,37 @@
   <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
   <title>Manual Interactivo de Dart</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script defer src="script/script.js"></script>
 </head>
+
 <body class="dark-theme"> <!-- Modo oscuro por defecto -->
   <div id="output"></div>
   <!-- Landing Page: Vista de Introducción extendida -->
   <div id="landing">
     <div class="landing-content">
       <!-- Logo oficial de Dart -->
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" 
-        alt="Dart Logo" 
-        class="landing-image"
-      >
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" alt="Dart Logo"
+        class="landing-image">
       <h1>Bienvenido al Manual Interactivo de Dart</h1>
       <p>
-        Dart es un lenguaje de programación moderno, desarrollado por Google, que potencia el desarrollo de aplicaciones web y móviles. 
-        Gracias a su sintaxis limpia y características avanzadas, Dart te permite construir interfaces impresionantes, manejar datos de forma eficiente y crear aplicaciones escalables.
+        Dart es un lenguaje de programación moderno, desarrollado por Google, que potencia el desarrollo de aplicaciones
+        web y móviles.
+        Gracias a su sintaxis limpia y características avanzadas, Dart te permite construir interfaces impresionantes,
+        manejar datos de forma eficiente y crear aplicaciones escalables.
       </p>
       <p>
-        Explora este portal interactivo, donde encontrarás ejemplos prácticos, comparaciones entre el uso correcto e incorrecto y datos complementarios que enriquecerán tu aprendizaje.
+        Explora este portal interactivo, donde encontrarás ejemplos prácticos, comparaciones entre el uso correcto e
+        incorrecto y datos complementarios que enriquecerán tu aprendizaje.
       </p>
       <button class="toggle-enter" id="enter-btn">Entrar al Manual</button>
     </div>
   </div>
-  
+
   <!-- Contenido principal del manual (inicialmente oculto) -->
   <div id="main-content">
     <header>
@@ -60,441 +64,452 @@
       <div class="theme-toggle-container">
         <span>Modo Oscuro</span>
         <label class="switch">
-  <input type="checkbox" id="theme-toggle">
-  <span class="slider"></span>
-</label>
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
         <span>Modo Claro</span>
       </div>
     </header>
-    
+
     <main>
       <!-- Sección: Introducción (versión resumida para el manual) -->
       <section id="introduccion" class="content-section">
         <h2>🚀 Introducción a Dart</h2>
         <p>
-          Dart es un lenguaje versátil que sirve de base para el desarrollo con Flutter, permitiendo crear aplicaciones de alto rendimiento y interfaces de usuario atractivas.
+          Dart es un lenguaje versátil que sirve de base para el desarrollo con Flutter, permitiendo crear aplicaciones
+          de alto rendimiento y interfaces de usuario atractivas.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Punto de entrada del programa
-void main() {
-  print("¡Hola, Dart!"); // Uso de la función print para mostrar en consola
-}
-</code></pre>
+              void main() {
+                print("¡Hola, Dart!"); // Uso de la función print para mostrar en consola
+              }
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// 'echo' no es válido en Dart, se usa print en su lugar
-void main() {
-  echo "¡Hola, Dart!";
-}
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://youtu.be/-q3sk4jgP4w?si=0o2khV1v6GxkBWVA" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-        <div class="complement-info">
-        <em>Dato complementario:</em> La función <code>main()</code> es el punto de entrada en Dart y es esencial para iniciar cualquier programa.
+              void main() {
+                echo "¡Hola, Dart!";
+              }
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/VvZ3iAavTEw"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+
+            </div>
+            <div class="complement-info">
+              <em>Dato complementario:</em> La función <code>main()</code> es el punto de entrada en Dart y es esencial
+              para iniciar cualquier programa.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Clases y Métodos -->
       <section id="clases" class="content-section">
         <h2>🏛️ Clases y Métodos</h2>
         <p>
-          Las clases son la estructura básica para crear objetos en Dart. Los métodos, definidos en las clases, encapsulan el comportamiento y permiten manipular los datos del objeto.
+          Las clases son la estructura básica para crear objetos en Dart. Los métodos, definidos en las clases,
+          encapsulan el comportamiento y permiten manipular los datos del objeto.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Definición de una clase llamada 'Persona'
-class Persona {
-  String nombre; // Propiedad o atributo de la clase
-  int edad;      // Propiedad o atributo de la clase
-  
-  // Constructor de la clase Persona
-  Persona(this.nombre, this.edad);
-  
-  // Método que muestra la información de la persona
-  void mostrarInfo() {
-    print("Nombre: $nombre, Edad: $edad");
-  }
-}
-</code></pre>
-<strong class="incorrect-label">❌ Incorrecto:</strong>
+              class Persona {
+                String nombre; // Propiedad o atributo de la clase
+                int edad;      // Propiedad o atributo de la clase
+                
+                // Constructor de la clase Persona
+                Persona(this.nombre, this.edad);
+                
+                // Método que muestra la información de la persona
+                void mostrarInfo() {
+                  print("Nombre: $nombre, Edad: $edad");
+                }
+              }
+            </code></pre>
+            <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// Clase mal implementada: falta la lógica de inicialización
-class Persona {
-  String nombre;
-  int edad;
-  
-  // Método que muestra información incompleta
-  void mostrarInfo() {
-    print("Nombre: " + nombre);
-  }
-}
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Información adicional:</em> Utilizar constructores abreviados facilita la inicialización y mejora la legibilidad del código.
+              class Persona {
+                String nombre;
+                int edad;
+                
+                // Método que muestra información incompleta
+                void mostrarInfo() {
+                  print("Nombre: " + nombre);
+                }
+              }
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/CSgJ8TMJmRg"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Información adicional:</em> Utilizar constructores abreviados facilita la inicialización y mejora la
+              legibilidad del código.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Listas -->
       <section id="listas" class="content-section">
         <h2>📋 Listas</h2>
         <p>
-          Las listas en Dart son colecciones ordenadas que pueden almacenar elementos y permiten operaciones como agregar, eliminar y recorrer mediante índices.
+          Las listas en Dart son colecciones ordenadas que pueden almacenar elementos y permiten operaciones como
+          agregar, eliminar y recorrer mediante índices.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Definición de una lista tipada de String
-List<String> frutas = ["Manzana", "Banana", "Cereza"]; 
-// Agregar un nuevo elemento a la lista
-frutas.add("Durazno"); 
-// Imprimir toda la lista
-print(frutas);
-</code></pre>
+              List<String> frutas = ["Manzana", "Banana", "Cereza"]; 
+              // Agregar un nuevo elemento a la lista
+              frutas.add("Durazno"); 
+              // Imprimir toda la lista
+              print(frutas);
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// Esto es una cadena, no una lista
-List frutas = "Manzana, Banana, Cereza";
-print(frutas);
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Dato interesante:</em> Las listas tipadas mejoran la seguridad en tiempo de compilación, evitando errores de tipo.
+              List frutas = "Manzana, Banana, Cereza";
+              print(frutas);
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/SCSjlZtQOlo"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Dato interesante:</em> Las listas tipadas mejoran la seguridad en tiempo de compilación, evitando
+              errores de tipo.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Mapas y Diccionarios -->
       <section id="mapas" class="content-section">
         <h2>📌 Mapas y Diccionarios</h2>
         <p>
-          Los mapas son colecciones que asocian claves con valores, permitiendo un acceso rápido a los datos mediante una clave única.
+          Los mapas son colecciones que asocian claves con valores, permitiendo un acceso rápido a los datos mediante
+          una clave única.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Creación de un mapa tipado con claves String y valores int
-Map<String, int> edades = {
-  "Ana": 25,
-  "Luis": 30
-};
-// Acceder al valor de la clave "Ana"
-print(edades["Ana"]); // Imprime 25
-</code></pre>
+              Map<String, int> edades = {
+                "Ana": 25,
+                "Luis": 30
+              };
+              // Acceder al valor de la clave "Ana"
+              print(edades["Ana"]); // Imprime 25
+              </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// Esto no es un mapa, sino una lista
-Map edades = ["Ana", 25, "Luis", 30];
-print(edades);
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Consejo útil:</em> Usar mapas tipados (por ejemplo, <code>Map&lt;String, int&gt;</code>) ayuda a mantener la coherencia y evita errores.
+              Map edades = ["Ana", 25, "Luis", 30];
+              print(edades);
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/NohPbaR7ML4"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Consejo útil:</em> Usar mapas tipados (por ejemplo, <code>Map&lt;String, int&gt;</code>) ayuda a
+              mantener la coherencia y evita errores.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Herencia -->
       <section id="herencia" class="content-section">
         <h2>🧬 Herencia</h2>
         <p>
-          La herencia permite que una clase derivada herede propiedades y métodos de una clase base, promoviendo la reutilización del código y la organización lógica.
+          La herencia permite que una clase derivada herede propiedades y métodos de una clase base, promoviendo la
+          reutilización del código y la organización lógica.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Clase base o superclase
-class Animal {
-  void hacerSonido() {
-    print("Sonido genérico");
-  }
-}
+              class Animal {
+                void hacerSonido() {
+                  print("Sonido genérico");
+                }
+              }
 
-// Clase Perro que hereda de la clase Animal
-class Perro extends Animal {
-  @override
-  void hacerSonido() {
-    print("Guau guau");
-  }
-}
-</code></pre>
+              // Clase Perro que hereda de la clase Animal
+              class Perro extends Animal {
+                @override
+                void hacerSonido() {
+                  print("Guau guau");
+                }
+              }
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// Falta la herencia, se implementa la lógica sin reutilizar código
-class Perro {
-  void hacerSonido() {
-    print("Guau guau");
-  }
-}
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Dato adicional:</em> Dart no soporta herencia múltiple, pero puedes utilizar mixins para compartir comportamientos entre clases.
+              class Perro {
+                void hacerSonido() {
+                  print("Guau guau");
+                }
+              }
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/btcXv6rBDQc"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Dato adicional:</em> Dart no soporta herencia múltiple, pero puedes utilizar mixins para compartir
+              comportamientos entre clases.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Constructores -->
       <section id="constructores" class="content-section">
         <h2>🏗️ Constructores</h2>
         <p>
-          Los constructores son métodos especiales que se ejecutan al crear una nueva instancia de una clase. Permiten inicializar propiedades y realizar configuraciones necesarias.
+          Los constructores son métodos especiales que se ejecutan al crear una nueva instancia de una clase. Permiten
+          inicializar propiedades y realizar configuraciones necesarias.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Clase con un constructor que inicializa sus propiedades
-class Persona {
-  String nombre;
-  int edad;
-  
-  // Constructor
-  Persona(this.nombre, this.edad);
-}
-</code></pre>
+              class Persona {
+                String nombre;
+                int edad;
+                
+                // Constructor
+                Persona(this.nombre, this.edad);
+              }
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// Falta el constructor, lo que puede causar errores en la inicialización
-class Persona {
-  String nombre;
-  int edad;
-}
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Información extra:</em> Los constructores pueden tener parámetros opcionales y valores por defecto para mayor flexibilidad.
+              class Persona {
+                String nombre;
+                int edad;
+              }
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/gx-n16pPqt4"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Información extra:</em> Los constructores pueden tener parámetros opcionales y valores por defecto
+              para mayor flexibilidad.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Constructores Factory -->
       <section id="factory" class="content-section">
         <h2>🏭 Constructores Factory</h2>
         <p>
-          Los constructores factory permiten controlar la creación de instancias, pudiendo devolver una instancia existente o aplicar lógica condicional durante la creación.
+          Los constructores factory permiten controlar la creación de instancias, pudiendo devolver una instancia
+          existente o aplicar lógica condicional durante la creación.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Clase con constructor privado y un factory constructor
-class Usuario {
-  String nombre;
-  int edad;
-  
-  // Constructor privado
-  Usuario._(this.nombre, this.edad);
-  
-  // Factory constructor que procesa un JSON
-  factory Usuario.desdeJson(Map<String, dynamic> json) {
-    return Usuario._(json['nombre'], json['edad']);
-  }
-}
-</code></pre>
+              class Usuario {
+                String nombre;
+                int edad;
+                
+                // Constructor privado
+                Usuario._(this.nombre, this.edad);
+                
+                // Factory constructor que procesa un JSON
+                factory Usuario.desdeJson(Map<String, dynamic> json) {
+                  return Usuario._(json['nombre'], json['edad']);
+                }
+              }
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// Esto no es un factory constructor, sino un constructor normal
-class Usuario {
-  String nombre;
-  int edad;
-  
-  Usuario.desdeJson(Map<String, dynamic> json) {
-    nombre = json['nombre'];
-    edad = json['edad'];
-  }
-}
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Dato interesante:</em> Los factory constructors son ideales para implementar patrones de diseño como el Singleton.
+              class Usuario {
+                String nombre;
+                int edad;
+                
+                Usuario.desdeJson(Map<String, dynamic> json) {
+                  nombre = json['nombre'];
+                  edad = json['edad'];
+                }
+              }
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/be5gAaY93q8"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Dato interesante:</em> Los factory constructors son ideales para implementar patrones de diseño como
+              el Singleton.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Búsquedas en Listas -->
       <section id="busquedas" class="content-section">
         <h2>🔍 Búsquedas en Listas</h2>
         <p>
-          Dart ofrece métodos como <code>firstWhere</code> para buscar elementos en listas de manera eficiente, permitiendo manejar casos en que no se encuentra el elemento.
+          Dart ofrece métodos como <code>firstWhere</code> para buscar elementos en listas de manera eficiente,
+          permitiendo manejar casos en que no se encuentra el elemento.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Uso de firstWhere con la clausula orElse para evitar errores
-List<int> numeros = [1, 2, 3, 4, 5];
-int encontrado = numeros.firstWhere(
-  (num) => num > 3,
-  orElse: () => -1
-);
-print(encontrado); // Imprime 4
-</code></pre>
+              List<int> numeros = [1, 2, 3, 4, 5];
+              int encontrado = numeros.firstWhere(
+                (num) => num > 3,
+                orElse: () => -1
+              );
+              print(encontrado); // Imprime 4
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// No se maneja el caso donde no se encuentra el elemento
-List<int> numeros = [1, 2, 3, 4, 5];
-int encontrado = numeros.firstWhere((num) => num > 5);
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
+              List<int> numeros = [1, 2, 3, 4, 5];
+              int encontrado = numeros.firstWhere((num) => num > 5);
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/tpM2bIhhmGI"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
               <em>Tip:</em> Usar <code>orElse</code> es fundamental para evitar excepciones en búsquedas sin resultados.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Operadores -->
       <section id="operadores" class="content-section">
         <h2>➗ Operadores</h2>
         <p>
-          Los operadores permiten realizar operaciones matemáticas y lógicas. Además, Dart soporta la sobrecarga de operadores para definir comportamientos personalizados en tus clases.
+          Los operadores permiten realizar operaciones matemáticas y lógicas. Además, Dart soporta la sobrecarga de
+          operadores para definir comportamientos personalizados en tus clases.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Operaciones básicas con operadores
-int a = 10;
-int b = 5;
-int suma = a + b; // Operador de suma
-bool esMayor = a > b; // Operador relacional
-print(suma); // 15
-print(esMayor); // true
-</code></pre>
+              int a = 10;
+              int b = 5;
+              int suma = a + b; // Operador de suma
+              bool esMayor = a > b; // Operador relacional
+              print(suma); // 15
+              print(esMayor); // true
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// 'add' no es un operador válido en Dart
-int a = 10;
-int b = 5;
-int suma = a add b; 
-print(suma);
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Dato complementario:</em> Redefinir operadores en tus clases puede hacer que trabajar con objetos sea tan natural como con tipos primitivos.
+              int a = 10;
+              int b = 5;
+              int suma = a add b; 
+              print(suma);
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/yTDJadwiOTo"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Dato complementario:</em> Redefinir operadores en tus clases puede hacer que trabajar con objetos sea
+              tan natural como con tipos primitivos.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Excepciones -->
       <section id="excepciones" class="content-section">
         <h2>⚠️ Excepciones</h2>
         <p>
-          El manejo de excepciones se realiza con bloques <code>try-catch</code>, permitiendo capturar errores en tiempo de ejecución y mantener el flujo de la aplicación.
+          El manejo de excepciones se realiza con bloques <code>try-catch</code>, permitiendo capturar errores en tiempo
+          de ejecución y mantener el flujo de la aplicación.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
           <div class="example">
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>// Uso de try-catch con división entera que lanza excepción
-try {
-  int resultado = 10 ~/ 0; 
-  print(resultado);
-} catch (e) {
-  print("Error: $e");
-}
-</code></pre>
+              try {
+                int resultado = 10 ~/ 0; 
+                print(resultado);
+              } catch (e) {
+                print("Error: $e");
+              }
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>// En Dart, 10 / 0 no lanza excepción, sino Infinity
-try {
-  int resultado = 10 / 0; 
-  print(resultado);
-} catch (e) {
-  print(e);
-}
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Información extra:</em> Usar el operador de división entera <code>~/</code> es una forma segura de manejar divisiones y evitar resultados inesperados.
+              try {
+                int resultado = 10 / 0; 
+                print(resultado);
+              } catch (e) {
+                print(e);
+              }
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/dqU0h536H10"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Información extra:</em> Usar el operador de división entera <code>~/</code> es una forma segura de
+              manejar divisiones y evitar resultados inesperados.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Manejo de JSON -->
       <section id="json" class="content-section">
         <h2>📦 Manejo de JSON</h2>
         <p>
-          El módulo <code>dart:convert</code> facilita convertir JSON a objetos y viceversa, lo que es esencial para interactuar con APIs y manejar datos externos.
+          El módulo <code>dart:convert</code> facilita convertir JSON a objetos y viceversa, lo que es esencial para
+          interactuar con APIs y manejar datos externos.
         </p>
         <div class="example-container">
           <button class="toggle-example">Ver ejemplos</button>
@@ -502,48 +517,50 @@ try {
             <strong class="correct-label">✅ Correcto:</strong>
             <pre><code>import 'dart:convert';
 
-// Cadena JSON válida
-String jsonString = '{"nombre": "Ana", "edad": 25}';
-// Convertir la cadena JSON a un Map
-Map<String, dynamic> usuario = jsonDecode(jsonString);
-print(usuario["nombre"]); // Ana
-</code></pre>
+              // Cadena JSON válida
+              String jsonString = '{"nombre": "Ana", "edad": 25}';
+              // Convertir la cadena JSON a un Map
+              Map<String, dynamic> usuario = jsonDecode(jsonString);
+              print(usuario["nombre"]); // Ana
+            </code></pre>
             <strong class="incorrect-label">❌ Incorrecto:</strong>
             <pre><code>import 'dart:convert';
 
-// JSON inválido (faltan comillas)
-String jsonString = '{nombre: Ana, edad: 25}';
-Map<String, dynamic> usuario = jsonDecode(jsonString);
-print(usuario);
-</code></pre>
-<div class="video-container">
-  <iframe class="styled-video" width="560" height="315" 
-          src="https://www.youtube.com/embed/NhhSGqvPC2Y" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-<div class="complement-info">
-              <em>Dato interesante:</em> Validar el formato del JSON es crucial; herramientas online como JSONLint pueden ayudarte a detectar errores.
+              // JSON inválido (faltan comillas)
+              String jsonString = '{nombre: Ana, edad: 25}';
+              Map<String, dynamic> usuario = jsonDecode(jsonString);
+              print(usuario);
+            </code></pre>
+            <div class="video-container">
+              <iframe class="styled-video" width="560" height="315" src="https://www.youtube.com/embed/pPmwRiznHbw"
+                frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="complement-info">
+              <em>Dato interesante:</em> Validar el formato del JSON es crucial; herramientas online como JSONLint
+              pueden ayudarte a detectar errores.
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Sección: Práctica básica (Hola, mundo) -->
       <section id="practica-completa" class="content-section">
         <div class="challenge-container">
           <h2>📝 Práctica</h2>
-        <p>
-          Escribe un programa en Dart que imprima <code>¡Hola, mundo!</code> y presiona Evaluar para recibir retroalimentación inmediata.
-        </p>
-        <textarea id="challenge-1" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
-        <button id="eval-challenge-1">Evaluar</button>
-        <div id="practice-output"></div>
-        <div class="complement-info">
-          <em>Consejo práctico:</em> Escribe el código manualmente para reforzar tu aprendizaje y familiarizarte con la sintaxis de Dart.
-        </div>
+          <p>
+            Escribe un programa en Dart que imprima <code>¡Hola, mundo!</code> y presiona Evaluar para recibir
+            retroalimentación inmediata.
+          </p>
+          <textarea id="practice-input" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
+          <button id="practice-btn">Evaluar</button>
+          <div id="practice-output"></div>
+          <div class="complement-info">
+            <em>Consejo práctico:</em> Escribe el código manualmente para reforzar tu aprendizaje y familiarizarte con
+            la sintaxis de Dart.
+          </div>
         </div>
       </section>
 
@@ -551,8 +568,10 @@ print(usuario);
       <section id="practica-completa" class="content-section">
         <h2>🧪 Práctica Avanzada</h2>
         <p>
-          Ahora pondrás a prueba tus conocimientos de <strong>Clases y Métodos, Listas, Mapas, Herencia, Constructores, Constructores Factory, Búsquedas en Listas, Operadores, Excepciones y JSON</strong>.
-          Cada mini-desafío validará si incluiste ciertos elementos clave en tu código, Para desbloquear los siguientes niveles debes completar los anteriores.
+          Ahora pondrás a prueba tus conocimientos de <strong>Clases y Métodos, Listas, Mapas, Herencia, Constructores,
+            Constructores Factory, Búsquedas en Listas, Operadores, Excepciones y JSON</strong>.
+          Cada mini-desafío validará si incluiste ciertos elementos clave en tu código, Para desbloquear los siguientes
+          niveles debes completar los anteriores.
         </p>
 
         <!-- 1. Clases y Métodos -->
@@ -576,7 +595,9 @@ print(usuario);
         <!-- 3. Mapas -->
         <div class="challenge-container" id="challenge-block-3" style="display: none;">
           <h3>Desafío 3: Mapas</h3>
-          <p>Crea un mapa (<code>Map&lt;String, int&gt;</code>) con dos pares clave-valor e imprime el valor de la clave <code>\"Ana\"</code>.</p>
+          <p>Crea un mapa (<code>Map&lt;String, int&gt;</code>) con dos pares clave-valor e imprime el valor de la clave
+            <code>\"Ana\"</code>.
+          </p>
           <textarea id="challenge-3" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-3">Evaluar</button>
           <div id="output-challenge-3"></div>
@@ -585,7 +606,8 @@ print(usuario);
         <!-- 4. Herencia -->
         <div class="challenge-container" id="challenge-block-4" style="display: none;">
           <h3>Desafío 4: Herencia</h3>
-          <p>Crea una clase <code>Animal</code> y una clase <code>Perro</code> que extienda <code>Animal</code>. Sobrescribe un método <code>hacerSonido()</code> para que imprima <code>Guau</code>.</p>
+          <p>Crea una clase <code>Animal</code> y una clase <code>Perro</code> que extienda <code>Animal</code>.
+            Sobrescribe un método <code>hacerSonido()</code> para que imprima <code>Guau</code>.</p>
           <textarea id="challenge-4" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-4">Evaluar</button>
           <div id="output-challenge-4"></div>
@@ -594,7 +616,8 @@ print(usuario);
         <!-- 5. Constructores -->
         <div class="challenge-container" id="challenge-block-5" style="display: none;">
           <h3>Desafío 5: Constructores</h3>
-          <p>Crea un constructor en la clase <code>Persona</code> que reciba <code>nombre</code> y <code>edad</code> e imprima esos valores.</p>
+          <p>Crea un constructor en la clase <code>Persona</code> que reciba <code>nombre</code> y <code>edad</code> e
+            imprima esos valores.</p>
           <textarea id="challenge-5" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-5">Evaluar</button>
           <div id="output-challenge-5"></div>
@@ -603,7 +626,9 @@ print(usuario);
         <!-- 6. Constructores Factory -->
         <div class="challenge-container" id="challenge-block-6" style="display: none;">
           <h3>Desafío 6: Constructores Factory</h3>
-          <p>Crea una clase <code>Usuario</code> con un factory constructor <code>desdeJson</code> que reciba un <code>Map</code> y asigne <code>nombre</code> y <code>edad</code>.</p>
+          <p>Crea una clase <code>Usuario</code> con un factory constructor <code>desdeJson</code> que reciba un
+            <code>Map</code> y asigne <code>nombre</code> y <code>edad</code>.
+          </p>
           <textarea id="challenge-6" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-6">Evaluar</button>
           <div id="output-challenge-6"></div>
@@ -612,7 +637,8 @@ print(usuario);
         <!-- 7. Búsquedas en Listas -->
         <div class="challenge-container" id="challenge-block-7" style="display: none;">
           <h3>Desafío 7: Búsquedas en Listas</h3>
-          <p>Usa <code>firstWhere</code> para encontrar el primer número mayor a 3 en la lista <code>[1,2,3,4,5]</code>. Maneja el caso en que no se encuentre el elemento.</p>
+          <p>Usa <code>firstWhere</code> para encontrar el primer número mayor a 3 en la lista <code>[1,2,3,4,5]</code>.
+            Maneja el caso en que no se encuentre el elemento.</p>
           <textarea id="challenge-7" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-7">Evaluar</button>
           <div id="output-challenge-7"></div>
@@ -630,7 +656,8 @@ print(usuario);
         <!-- 9. Excepciones -->
         <div class="challenge-container" id="challenge-block-9" style="display: none;">
           <h3>Desafío 9: Excepciones</h3>
-          <p>Usa <code>try/catch</code> para capturar la excepción al dividir un número entero por cero e imprimir el error.</p>
+          <p>Usa <code>try/catch</code> para capturar la excepción al dividir un número entero por cero e imprimir el
+            error.</p>
           <textarea id="challenge-9" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-9">Evaluar</button>
           <div id="output-challenge-9"></div>
@@ -639,20 +666,23 @@ print(usuario);
         <!-- 10. JSON -->
         <div class="challenge-container" id="challenge-block-10" style="display: none;">
           <h3>Desafío 10: JSON</h3>
-          <p>Usa <code>jsonDecode</code> para convertir la cadena <code>'{\"nombre\":\"Ana\",\"edad\":25}'</code> en un <code>Map&lt;String,dynamic&gt;</code> e imprime el nombre.</p>
+          <p>Usa <code>jsonDecode</code> para convertir la cadena <code>'{\"nombre\":\"Ana\",\"edad\":25}'</code> en un
+            <code>Map&lt;String,dynamic&gt;</code> e imprime el nombre.
+          </p>
           <textarea id="challenge-10" class="minimal-textarea" placeholder="// Escribe tu código aquí..."></textarea>
           <button id="eval-challenge-10">Evaluar</button>
           <div id="output-challenge-10"></div>
         </div>
 
       </section>
-      
+
     </main>
-    
+
     <footer>
       <p>© 2025 Manual Interactivo de Dart</p>
     </footer>
   </div>
-  
+
 </body>
+
 </html>

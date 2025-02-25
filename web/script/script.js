@@ -344,38 +344,145 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  function desbloquearSiguiente(nivel) {
+  // Sección de práctica (Hola, mundo)
+  const practiceButton = document.getElementById('practice-btn');
+  const practiceInput = document.getElementById('practice-input');
+  const practiceOutput = document.getElementById('practice-output');
+
+  if (practiceButton && practiceInput && practiceOutput) {
+    practiceButton.addEventListener('click', () => {
+      const code = practiceInput.value;
+      // Verificación básica: buscamos la función print con el mensaje "¡Hola, mundo!"
+      if (
+        code.includes('print("¡Hola, mundo!")') ||
+        code.includes("print('¡Hola, mundo!')")
+      ) {
+        practiceOutput.textContent = '✅ ¡Correcto!';
+        practiceOutput.style.color = 'green';
+      } else {
+        practiceOutput.textContent = '❌ Incorrecto, intenta de nuevo.';
+        practiceOutput.style.color = 'red';
+      }
+    });
+  }
+
+  /* =========================
+     PRÁCTICA AVANZADA
+  ==========================*/
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    function desbloquearSiguiente(nivel) {
       const siguienteBloque = document.getElementById(`challenge-block-${nivel + 1}`);
       if (siguienteBloque) {
-          siguienteBloque.style.display = "block"; // Hace visible el siguiente desafío
+        siguienteBloque.style.display = "block"; // Hace visible el siguiente desafío
       }
-  }
-
-  function evaluarDesafio(nivel) {
+    }
+  
+    function evaluarDesafio(nivel) {
       const input = document.getElementById(`challenge-${nivel}`).value.trim();
+      const output = document.getElementById(`output-challenge-${nivel}`);
+      output.innerHTML = ""; // Limpiar mensajes previos
       const mensaje = document.createElement("p");
-
-      // Simulación de evaluación (puedes agregar validaciones más específicas)
-      if (input.length > 0) { 
-          mensaje.textContent = "✅ ¡Correcto!";
-          mensaje.style.color = "green";
-          desbloquearSiguiente(nivel);
-      } else {
-          mensaje.textContent = "❌ Inténtalo de nuevo.";
-          mensaje.style.color = "red";
+  
+      let esCorrecto = false;
+  
+      switch (nivel) {
+        case 1:
+          // Validación del Desafío 1: Clases y Métodos
+          esCorrecto = input.includes('class Persona') &&
+                       input.includes('void saludar') &&
+                       (input.includes('print("Hola")') || input.includes("print('Hola')"));
+          break;
+  
+        case 2:
+          // Validación del Desafío 2: Listas
+          esCorrecto = input.includes('List<String>') && input.includes('print(');
+          break;
+  
+        case 3:
+          // Validación del Desafío 3: Diccionarios
+          esCorrecto = input.includes('Map<String, Integer>') && input.includes('put(');
+          break;
+  
+        case 4:
+          // Validación del Desafío 4: Bucles
+          esCorrecto = (input.includes('for(') || input.includes('while(')) && input.includes('print(');
+          break;
+  
+        case 5:
+          // Validación del Desafío 5: Funciones Recursivas
+          esCorrecto = input.includes('int factorial(') && input.includes('return');
+          break;
+  
+        case 6:
+          // Validación del Desafío 6: Programación Orientada a Objetos (POO)
+          esCorrecto = input.includes('class Coche') &&
+                       input.includes('private') &&
+                       input.includes('public') &&
+                       input.includes('get') &&
+                       input.includes('set');
+          break;
+  
+        case 7:
+          // Validación del Desafío 7: Manejo de Excepciones
+          esCorrecto = input.includes('try') &&
+                       input.includes('catch') &&
+                       input.includes('Exception');
+          break;
+  
+        case 8:
+          // Validación del Desafío 8: Archivos
+          esCorrecto = input.includes('File') &&
+                       input.includes('BufferedReader') &&
+                       input.includes('readLine');
+          break;
+  
+        case 9:
+          // Validación del Desafío 9: Hilos (Threads)
+          esCorrecto = input.includes('Thread') &&
+                       input.includes('Runnable') &&
+                       input.includes('start()');
+          break;
+  
+        case 10:
+          // Validación del Desafío 10: Bases de Datos
+          esCorrecto = input.includes('Connection') &&
+                       input.includes('Statement') &&
+                       input.includes('executeQuery');
+          break;
+  
+        default:
+          esCorrecto = input.length > 0;
       }
-
-      document.getElementById(`output-challenge-${nivel}`).innerHTML = "";
-      document.getElementById(`output-challenge-${nivel}`).appendChild(mensaje);
-  }
-
-  // Asignar eventos a los botones
-  for (let i = 1; i <= 10; i++) {
+  
+      if (esCorrecto) {
+        mensaje.textContent = "✅ ¡Correcto!";
+        mensaje.style.color = "green";
+        desbloquearSiguiente(nivel);
+      } else {
+        mensaje.textContent = "❌ Inténtalo de nuevo. Asegúrate de seguir las instrucciones.";
+        mensaje.style.color = "red";
+      }
+  
+      output.appendChild(mensaje);
+    }
+  
+    function bloquearDesafios() {
+      for (let i = 2; i <= 10; i++) {
+        const bloque = document.getElementById(`challenge-block-${i}`);
+        if (bloque) {
+          bloque.style.display = "none"; // Ocultar todos menos el primero
+        }
+      }
+    }
+  
+    // Asignar eventos a los botones
+    for (let i = 1; i <= 10; i++) {
       const boton = document.getElementById(`eval-challenge-${i}`);
       if (boton) {
-          boton.addEventListener("click", () => evaluarDesafio(i));
+        boton.addEventListener("click", () => evaluarDesafio(i));
       }
-  }
-});
-
+    }
+  
+    bloquearDesafios(); // Bloquea todos los desafíos excepto el primero
+  });  
